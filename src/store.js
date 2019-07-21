@@ -27,13 +27,13 @@ export default new Vuex.Store({
     ]
   },
   mutations: {
-    setMessage (state, payload) {
-      state.message = payload.message
+    updatelist (state, payload) {
+      state.task = payload.list
     }
   },
   actions: {
-    updatemessage ({ commit }, message) {
-      commit('setMessage', { message })
+    updatelist ({ commit }, list) {
+      commit('updatelist', { list })
     }
   }
 })

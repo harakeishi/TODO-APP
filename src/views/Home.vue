@@ -137,6 +137,9 @@ export default {
         this.shown.info = null
         this.shown.rating = 0
       }
+      this.$store.dispatch('updatelist', this.list).then(() => function () {
+        this.list = this.$store.state.task
+      })
       this.$modal.hide('popup')
     },
     delTask () {

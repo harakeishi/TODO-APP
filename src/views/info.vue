@@ -13,14 +13,11 @@ export default {
   name: 'info',
   data () {
     return {
-      message: this.$store.state.message,
       newmessage: ''
     }
   },
   methods: {
     updateMessage () {
-      this.$store.dispatch('updatemessage', this.newmessage)
-      this.message = this.$store.state.message
     }
   }
 }
