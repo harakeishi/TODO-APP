@@ -6,7 +6,7 @@
           <th><p class="title">未着手</p></th>
           <th><span class="button" @click="addTask('stock')"><p class="add">+</p></span></th>
         </tr>
-        <tr v-for="(task, index) in list">
+        <tr v-for="(task, index) in list" v-bind:key="index">
           <td colspan="2" v-on:click="show(task, index)" v-if="task.status == 'stock'">
             <label >{{ task.title }}</label>
             <star-rating v-model="task.rating" :star-size="20" inline :show-rating="false" :read-only="true"> </star-rating>
@@ -20,7 +20,7 @@
           <th><p class="title">実行中</p></th>
           <th><span class="button" @click="addTask('running')"><p class="add">+</p></span></th>
         </tr>
-        <tr v-for="(task, index) in list">
+        <tr v-for="(task, index) in list" v-bind:key="index">
           <td colspan="2" v-on:click="show(task, index)" v-if="task.status == 'running'">
             <label >{{ task.title }}</label>
             <star-rating v-model="task.rating" :star-size="20" inline :show-rating="false" :read-only="true"> </star-rating>
@@ -34,7 +34,7 @@
           <th><p class="title">完了</p></th>
           <th><span class="button" @click="addTask('completion')"><p class="add">+</p></span></th>
         </tr>
-        <tr v-for="(task, index) in list">
+        <tr v-for="(task, index) in list" v-bind:key="index">
           <td colspan="2" v-on:click="show(task, index)" v-if="task.status == 'completion'">
             <label >{{ task.title }}</label>
             <star-rating v-model="task.rating" :star-size="20" inline :show-rating="false" :read-only="true"> </star-rating>
@@ -67,7 +67,6 @@
 </template>
 
 <script>
-import VModal from 'vue-js-modal'
 import StarRating from 'vue-star-rating'
 export default {
   name: 'home',
@@ -87,7 +86,7 @@ export default {
   components: {
     StarRating
   },
-  mounted() {
+  mounted () {
     // ステートのタスクリストを持ってくる
     this.list = this.$store.state.task
   },
@@ -120,19 +119,19 @@ export default {
       }
       if (this.isedit) {
         var i = this.editIndex
-        var adder = ['title','status','info','rating']
+        var adder = ['title', 'status', 'info', 'rating']
         adder.title = this.shown.title
         adder.status = this.shown.status
         adder.info = this.shown.info
         adder.rating = this.shown.rating
         this.list.splice(i, 1, adder)
       } else {
-        var adder = ['title','status','info']
-        adder.title = this.shown.title
-        adder.status = this.shown.status
-        adder.info = this.shown.info
-        adder.rating = this.shown.rating
-        this.list.push(adder)
+        var Sadder = ['title', 'status', 'info', 'rating']
+        Sadder.title = this.shown.title
+        Sadder.status = this.shown.status
+        Sadder.info = this.shown.info
+        Sadder.rating = this.shown.rating
+        this.list.push(Sadder)
         this.shown.title = null
         this.shown.status = null
         this.shown.info = null

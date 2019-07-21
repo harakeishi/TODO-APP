@@ -4,9 +4,9 @@
   </div>
 </template>
 <script>
-  export default {
-    name: 'appheader'
-  }
+export default {
+  name: 'appheader'
+}
 </script>
 <style scoped>
   .appheader{

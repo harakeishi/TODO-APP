@@ -14,10 +14,10 @@ export default {
   data () {
     return {
       message: this.$store.state.message,
-      newmessage:  ''
+      newmessage: ''
     }
   },
-  methods : {
+  methods: {
     updateMessage () {
       this.$store.dispatch('updatemessage', this.newmessage)
       this.message = this.$store.state.message

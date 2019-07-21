@@ -27,13 +27,13 @@ export default new Vuex.Store({
     ]
   },
   mutations: {
-    setMessage(state, payload) {
+    setMessage (state, payload) {
       state.message = payload.message
     }
   },
   actions: {
-    updatemessage({commit}, message) {
-      commit('setMessage', {message})
+    updatemessage ({ commit }, message) {
+      commit('setMessage', { message })
     }
   }
 })

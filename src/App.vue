@@ -13,13 +13,13 @@
   </div>
 </template>
 <script>
-  import appheader from './components/header.vue'
-  export default {
-    name: 'App',
-    components: {
-      appheader: appheader
-    }
+import appheader from './components/header.vue'
+export default {
+  name: 'App',
+  components: {
+    appheader: appheader
   }
+}
 </script>
 
 <style scoped>
